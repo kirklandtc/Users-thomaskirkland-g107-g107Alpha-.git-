@@ -37,4 +37,16 @@ setTimeout(showTime, 1000);
 function addZero(n) {
   return (parseInt(n, 10) < 10 ? '0' : '') + n;
 }
+
+// Set Background
+
+function setBgGreet(){
+  let today = new Date()
+    hour = today.getHours();
+
+    if(hour < 12) {
+
+    } else if (hour < 18)
+}
+
 showTime();
