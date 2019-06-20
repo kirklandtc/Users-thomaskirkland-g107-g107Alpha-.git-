@@ -44,7 +44,7 @@ function setBgGreet(){
   let today = new Date()
     hour = today.getHours();
 
-    if(hour < 12) {
+    if (hour < 12) {
 
     } else if (hour < 18)
 }
