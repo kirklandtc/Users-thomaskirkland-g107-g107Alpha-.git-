@@ -24,11 +24,11 @@ hour = hour % 12 || 12;
 
     //Output Time
 
+
 time.innerHTML = `${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(
   sec)}`;
 
 setTimeout(showTime, 1000);
-
 }
 
 
