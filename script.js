@@ -45,9 +45,22 @@ function setBgGreet() {
     hour = today.getHours();
 
     if (hour < 12) {
-
-    } else if (hour < 18)
+      // Morning
+    document.body.style.bacgroundImage = "url('../img/morning.jpg')";
+    greeting.textContent = 'Good Morning';
+    } else if (hour < 18) {
+      // Afternoon
+    document.body.style.bacgroundImage = "url('../img/afternoon.jpg')";
+    greeting.textContent = 'Good Afternoon';
+    } else {
+      // Evening
+    document.body.style.bacgroundImage = "url('../img/night.jpg')";
+    greeting.textContent = 'Good Evening';
+    document.body.style.color = 'white';
+  }
 }
+
 // Run
 
 showTime();
+setBgGreet();
