@@ -38,9 +38,9 @@ function addZero(n) {
   return (parseInt(n, 10) < 10 ? '0' : '') + n;
 }
 
-// Set Background
+// Set Background/Greeting
 
-function setBgGreet(){
+function setBgGreet() {
   let today = new Date()
     hour = today.getHours();
 
@@ -48,5 +48,6 @@ function setBgGreet(){
 
     } else if (hour < 18)
 }
+// Run
 
 showTime();
