@@ -56,7 +56,7 @@ function setBgGreet() {
       // Evening
     document.body.style.bacgroundImage = "url('../img/night.jpg')";
     greeting.textContent = 'Good Evening';
-    document.body.style.color = 'white';
+    document.body.style.color = 'green';
   }
 }
 
