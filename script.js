@@ -6,6 +6,10 @@ const time = document.getElementById('time'),
   name = document.getElementById('name'),
   focus = document.getElementById('focus');
 
+// Options
+const showAmPm = true;
+
+
 // Show Time
 
 function showTime(){
@@ -26,7 +30,8 @@ hour = hour % 12 || 12;
 
 
 time.innerHTML = `${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(
-  sec)}`;
+  sec
+)} ${showAmPm ? amPm : ''}`;
 
 setTimeout(showTime, 1000);
 }
@@ -41,24 +46,24 @@ function addZero(n) {
 // Set Background/Greeting
 
 function setBgGreet() {
-  let today = new Date()
+  let today = new Date(),
     hour = today.getHours();
-    min = today.getMinutes();
-    sec = today.getSeconds();
+    // min = today.getMinutes();
+    // sec = today.getSeconds();
 
     if (hour < 12) {
       // Morning
-    document.body.style.bacgroundImage = "imgages/MorningPhoto.jpg";
+    document.body.style.backgroundImage = "url('https://i.ibb.co/7vDLJFb/morning.jpg')";
     greeting.textContent = 'Good Morning';
     } else if (hour < 18) {
       // Afternoon
-    document.body.style.bacgroundImage = "imgages/AfternoonPrada.jpg";
+    document.body.style.backgroundImage = "url('https://i.ibb.co/3mThcXc/afternoon.jpg')";
     greeting.textContent = 'Good Afternoon';
     } else {
       // Evening
-    document.body.style.bacgroundImage = "imgages/EveningMountain.jpg";
+    document.body.style.backgroundImage = "url('https://i.ibb.co/924T2Wv/night.jpg')";
     greeting.textContent = 'Good Evening';
-    document.body.style.color = 'green';
+    document.body.style.color = 'white';
   }
 }
 
@@ -69,6 +74,20 @@ function getName() {
     name.textContent = '[Enter Name]';
   } else {
     name.textContent = localStorage.getItem('name')
+  }
+}
+
+// Set name
+
+function setName() {
+  if(e.type === 'keypress') {
+  // be sure key is pressed
+  if(e.which == 13 || e.keyCode == 13) {
+    localStorage.setItem('name', e.target.innerText);
+    name.blur();
+  }
+} else {
+  localStorage.setItem('name', e.target.innerText);
   }
 }
 
