@@ -114,14 +114,13 @@ function setFocus(e) {
   }
 } else {
   localStorage.setItem('focus', e.target.innerText);
-}
-
+  }
 }
 
 name.addEventListener('keypress', setName);
 name.addEventListener('blur', setName);
 focus.addEventListener('keypress', setFocus);
-focus.addEventListener('keypress', setFocus);
+focus.addEventListener('blur', setFocus);
 
 
 // Run
