@@ -55,15 +55,15 @@ function setBgGreet() {
     if (hour < 12) {
       // Morning
     document.body.style.backgroundImage = "url('https://i.ibb.co/7vDLJFb/morning.jpg')";
-    greeting.textContent = 'Good Morning';
+    greeting.textContent = 'Good Morning, ';
     } else if (hour < 18) {
       // Afternoon
     document.body.style.backgroundImage = "url('https://i.ibb.co/3mThcXc/afternoon.jpg')";
-    greeting.textContent = 'Good Afternoon';
+    greeting.textContent = 'Good Afternoon, ';
     } else {
       // Evening
     document.body.style.backgroundImage = "url('https://i.ibb.co/924T2Wv/night.jpg')";
-    greeting.textContent = 'Good Evening';
+    greeting.textContent = 'Good Evening, ';
     document.body.style.color = 'white';
   }
 }
@@ -71,27 +71,26 @@ function setBgGreet() {
 // Get name
 
 function getName() {
-  if(localStorage.getItem('name') === null) {
+  if (localStorage.getItem('name') === null) {
     name.textContent = '[Enter Name]';
   } else {
-    name.textContent = localStorage.getItem('name')
+    name.textContent = localStorage.getItem('name');
   }
 }
-
 // Set name
 
 function setName(e) {
-  if(e.type === 'keypress') {
+  if (e.type === 'keypress') {
+
   // be sure key is pressed
   if(e.which == 13 || e.keyCode == 13) {
     localStorage.setItem('name', e.target.innerText);
     name.blur();
   }
-} else {
+  } else {
   localStorage.setItem('name', e.target.innerText);
   }
 }
-
 // Get focus
 
 function getFocus() {
@@ -101,7 +100,6 @@ function getFocus() {
     focus.textContent = localStorage.getItem('focus');
   }
 }
-
 // Set focus
 
 function setFocus(e) {
@@ -112,9 +110,10 @@ function setFocus(e) {
     localStorage.setItem('focus', e.target.innerText);
     focus.blur();
   }
-} else {
+  } else {
   localStorage.setItem('focus', e.target.innerText);
-  }
+}
+
 }
 
 name.addEventListener('keypress', setName);
